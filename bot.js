@@ -32,25 +32,25 @@ fs.readdir("./commands/", (err, files) => {
 
 client.login(process.env.BOT_KEY);
 
-// client.on(`ready`, () => {
-//   console.log(`I am ready!`);
-// });
+client.on(`ready`, () => {
+  console.log(`I am ready!`);
+});
 
-// client.on(`message`, (message) => {
-//   // Exit and stop if message is sent by a bot
-//   if (message.author.bot) return;
-//   // Exit and stop if prefix is not included
-//   if (message.content.indexOf(config.prefix) !== 0 ) return;
+client.on(`message`, (message) => {
+  // Exit and stop if message is sent by a bot
+  if (message.author.bot) return;
+  // Exit and stop if prefix is not included
+  if (message.content.indexOf(config.prefix) !== 0 ) return;
 
-//   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
-//   const command = args.shift().toLowerCase();
+  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
 
-//   if (command === `ping`) {
-//     message.channel.send(`pong!`);
-//   }
+  if (command === `ping`) {
+    message.channel.send(`pong!`);
+  }
 
-//   if (command === `foo`) {
-//     message.channel.send(`bar!`);
-//   }
-// });
+  if (command === `foo`) {
+    message.channel.send(`bar!`);
+  }
+});
 
