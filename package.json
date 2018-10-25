@@ -8,7 +8,10 @@
     "discord.js": "^11.4.2",
     "dotenv": "^6.1.0",
     "enmap": "^4.3.3",
+    "fetch": "^1.1.0",
     "fs": "0.0.1-security",
+    "giphy-api": "^1.2.7",
+    "node-fetch": "^2.2.0",
     "node-opus": "^0.3.0"
   }
 }
