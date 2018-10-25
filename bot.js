@@ -8,8 +8,6 @@ const client = new Discord.Client();
 const config = require("./config.json")
 client.config = config
 
-client.login(process.env.BOT_KEY);
-
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
@@ -31,3 +29,5 @@ fs.readdir("./commands/", (err, files) => {
     client.commands.set(commandName, props);
   });
 });
+
+client.login(process.env.BOT_KEY);
