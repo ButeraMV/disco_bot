@@ -1,4 +1,4 @@
 exports.run = (client, message, args) => {
-  let helpMessage = "```**Here are a list of commands you can use:**\n_!gif_ Requires additional text after the command to search Giphy for a gif```"
+  let helpMessage = "```css\nCommands:\n\n!gif -> Requires additional text after the command to search Giphy for a gif\n```"
   message.channel.send(helpMessage).catch(console.error);
 };
