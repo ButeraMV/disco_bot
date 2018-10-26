@@ -31,3 +31,5 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 client.login(process.env.BOT_KEY);
+
+console.log('im here')
