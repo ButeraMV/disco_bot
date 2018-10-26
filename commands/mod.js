@@ -3,6 +3,7 @@ exports.run = (client, message, args) => {
   if (message.member.roles.has(modRole)) {
     let memberToMod = message.mentions.members.first();
     memberToMod.addRole(modRole).catch(console.error)
+    message.reply("you have modded " + memberToMod + ".")
   } else {
     message.reply("you don't have the required permissions to do that.")
   }
