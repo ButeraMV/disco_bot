@@ -18,7 +18,7 @@ exports.run = (client, message, args) => {
 
   // 2018-10-31T14:51:06-05:00
 
-  fetch(`https://www.googleapis.com/calendar/v3/calendars/${process.env.CAL_ID}/events?maxResults=5&key=${process.env.GOOGLE_KEY}`)
+  fetch(`https://www.googleapis.com/calendar/v3/calendars/otpef10f3afpfs6u3ljcu2fsa0@group.calendar.google.com/events?maxResults=5&key=${process.env.GOOGLE_KEY}`)
     .then(function (response) { return response.json(); })
     .then(function (json) {
       for (let i = 0; i < json.items.length; i++) {
