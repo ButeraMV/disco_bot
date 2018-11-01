@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
     timeMin = (new Date().toISOString());
     timeMax = endDate;
   } else {
-    console.log(args)
+    message.channel.send("Still working on that...")
   }
 
   fetch(`https://www.googleapis.com/calendar/v3/calendars/otpef10f3afpfs6u3ljcu2fsa0@group.calendar.google.com/events?maxResults=5&timeMin=${timeMin}&timeMax=${timeMax}&key=${process.env.GOOGLE_KEY}`)
