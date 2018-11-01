@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
     message.channel.send("Still working on that...")
   }
 
-  fetch(`https://www.googleapis.com/calendar/v3/calendars/otpef10f3afpfs6u3ljcu2fsa0@group.calendar.google.com/events?maxResults=5&timeMin=${timeMin}&timeMax=${timeMax}&key=${process.env.GOOGLE_KEY}`)
+  fetch(`https://www.googleapis.com/calendar/v3/calendars/otpef10f3afpfs6u3ljcu2fsa0@group.calendar.google.com/events?singleEvents=true&maxResults=5&timeMin=${timeMin}&timeMax=${timeMax}&key=${process.env.GOOGLE_KEY}`)
     .then(function (response) { return response.json(); })
     .then(function (json) {
       for (let i = 0; i < json.items.length; i++) {
@@ -30,7 +30,7 @@ exports.run = (client, message, args) => {
 
         if (timeToFormat.slice(0, 2) > 12) {
           let hours = timeToFormat.slice(0, 2) - 12;
-          formattedTime = (hours + ':' + timeToFormat.slice(3, 5) + 'PM')
+          formattedTime = (hours + ':' + timeToFormat.slice(3, 5) + 'PM UTC')
         }
 
         output.push([upcoming[i].summary, (json.items[i].start.dateTime).slice(5, 10).replace('-','/') + ' at ' + formattedTime, `https://www.${upcoming[i].location}`].join('\n'))
