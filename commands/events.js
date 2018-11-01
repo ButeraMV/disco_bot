@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
     message.channel.send("Still working on that...")
   }
 
-  fetch(`https://www.googleapis.com/calendar/v3/calendars/otpef10f3afpfs6u3ljcu2fsa0@group.calendar.google.com/events?singleEvents=true&maxResults=5&timeMin=${timeMin}&timeMax=${timeMax}&key=${process.env.GOOGLE_KEY}`)
+  fetch(`https://www.googleapis.com/calendar/v3/calendars/otpef10f3afpfs6u3ljcu2fsa0@group.calendar.google.com/events?singleEvents=true&timeMin=${timeMin}&timeMax=${timeMax}&key=${process.env.GOOGLE_KEY}`)
     .then(function (response) { return response.json(); })
     .then(function (json) {
       for (let i = 0; i < json.items.length; i++) {
