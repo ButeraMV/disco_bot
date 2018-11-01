@@ -30,7 +30,7 @@ exports.run = (client, message, args) => {
 
         if (timeToFormat.slice(0, 2) > 12) {
           let hours = timeToFormat.slice(0, 2) - 12;
-          formattedTime = (hours + ':' + timeToFormat.slice(3, 5) + 'PM UTC')
+          formattedTime = (hours + ':' + timeToFormat.slice(3, 5) + ' PM UTC')
         }
 
         output.push([upcoming[i].summary, (json.items[i].start.dateTime).slice(5, 10).replace('-','/') + ' at ' + formattedTime, `https://www.${upcoming[i].location}`].join('\n'))
